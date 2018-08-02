@@ -1,3 +1,5 @@
+/build_*/
+
 # osx noise
 .DS_Store
 profile
@@ -35,20 +37,15 @@ CMakeCache.txt
 
 # Visual Studio files
 /.vscode
-*.sln
-*.vcxproj
 *.suo
 *.sdf
 *.opensdf
 *.obj
 *.log
 *.tlog
-*.filters
-Win32
+*.VS.db
+*.VS.opendb
+.vs/
+ipch/
 
-# misc
-bin
-lib
-gen
-win32-deps
-**/*.dir/*
+*.lnk

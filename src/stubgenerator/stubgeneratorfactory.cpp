@@ -13,7 +13,7 @@
 #include "client/pyclientstubgenerator.h"
 #include "helper/cpphelper.h"
 #include "server/cppserverstubgenerator.h"
-#include <argtable2.h>
+#include <argtable/argtable3.h>
 #include <iostream>
 #include <jsonrpccpp/common/specificationparser.h>
 #include <jsonrpccpp/version.h>

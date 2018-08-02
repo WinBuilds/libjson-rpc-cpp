@@ -1,5 +1,18 @@
 #include "streamwriter.h"
+
+#ifdef _WIN32
+#include <io.h>
+#define write _write
+
+#ifdef _WIN64
+typedef __int64 ssize_t;
+#else
+typedef int     ssize_t;
+#endif
+
+#else
 #include <unistd.h>
+#endif
 
 using namespace jsonrpc;
 using namespace std;

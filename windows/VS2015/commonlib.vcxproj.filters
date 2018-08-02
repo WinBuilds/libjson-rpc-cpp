@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\src\jsonrpccpp\common\errors.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\common\exception.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\common\procedure.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\common\specificationparser.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\common\specificationwriter.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\common\streamreader.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\common\streamwriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\jsonrpccpp\common\errors.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\exception.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\procedure.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\sharedconstants.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\specification.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\specificationparser.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\specificationwriter.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\streamreader.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\common\streamwriter.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="connectors">
+      <UniqueIdentifier>{0f40c606-7c12-41db-a349-089cbee13694}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\jsonrpccpp\client\batchcall.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\client\batchresponse.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\client\client.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\client\rpcprotocolclient.cpp" />
+    <ClCompile Include="..\..\src\jsonrpccpp\client\connectors\httpclient.cpp">
+      <Filter>connectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jsonrpccpp\client\connectors\tcpsocketclient.cpp">
+      <Filter>connectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jsonrpccpp\client\connectors\windowstcpsocketclient.cpp">
+      <Filter>connectors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\jsonrpccpp\client\batchcall.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\client\batchresponse.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\client\client.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\client\iclientconnector.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\client\rpcprotocolclient.h" />
+    <ClInclude Include="..\..\src\jsonrpccpp\client\connectors\httpclient.h">
+      <Filter>connectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\jsonrpccpp\client\connectors\tcpsocketclient.h">
+      <Filter>connectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\jsonrpccpp\client\connectors\windowstcpsocketclient.h">
+      <Filter>connectors</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

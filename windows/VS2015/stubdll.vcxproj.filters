@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\src\stubgenerator\codegenerator.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\stubgenerator.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\stubgeneratorfactory.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\server\cppserverstubgenerator.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\helper\cpphelper.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\client\cppclientstubgenerator.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\client\jsclientstubgenerator.cpp" />
+    <ClCompile Include="..\..\src\stubgenerator\client\pyclientstubgenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\stubgenerator\codegenerator.h" />
+    <ClInclude Include="..\..\src\stubgenerator\stubgenerator.h" />
+    <ClInclude Include="..\..\src\stubgenerator\stubgeneratorfactory.h" />
+    <ClInclude Include="..\..\src\stubgenerator\stubhelper.h" />
+    <ClInclude Include="..\..\src\stubgenerator\server\cppserverstubgenerator.h" />
+    <ClInclude Include="..\..\src\stubgenerator\helper\cpphelper.h" />
+    <ClInclude Include="..\..\src\stubgenerator\client\cppclientstubgenerator.h" />
+    <ClInclude Include="..\..\src\stubgenerator\client\jsclientstubgenerator.h" />
+    <ClInclude Include="..\..\src\stubgenerator\client\pyclientstubgenerator.h" />
+  </ItemGroup>
+</Project>

@@ -11,7 +11,7 @@
 #include <fstream>
 #include <jsonrpccpp/common/specificationparser.h>
 
-#include <argtable2.h>
+#include <argtable/argtable3.h>
 
 #include "client/cppclientstubgenerator.h"
 #include "client/jsclientstubgenerator.h"
