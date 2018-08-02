@@ -6,4 +6,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\examples\xbmcremote.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\examples\xbmcremote.h" />
+  </ItemGroup>
 </Project>

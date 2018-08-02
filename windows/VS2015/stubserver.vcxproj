@@ -21,11 +21,20 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\examples\stubserver.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="commonlib.vcxproj">
+      <Project>{0d04abe5-27a4-473d-b337-21207b5d7a2d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="serverlib.vcxproj">
+      <Project>{5f1ea0c4-a3b3-4200-b8d4-5e0b44bdff30}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{976E92C8-3147-434D-8088-EDF2875291DA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>stubserver</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>jsonrpcstubserver</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -99,13 +108,20 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(OutDir)..\include;$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;curldll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDirDir)..\..\src\examples\abstractstubserver.h" "$(OutDir)jsonrpcstubgen.exe"  "$(SolutionDirDir)..\..\src\examples\spec.json" --cpp-server=AbstractStubServer --cpp-server-file="$(SolutionDirDir)..\..\src\examples\abstractstubserver.h"</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Generating stub..</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -114,13 +130,20 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(OutDir)..\include;$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;curldll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDirDir)..\..\src\examples\abstractstubserver.h" "$(OutDir)jsonrpcstubgen.exe"  "$(SolutionDirDir)..\..\src\examples\spec.json" --cpp-server=AbstractStubServer --cpp-server-file="$(SolutionDirDir)..\..\src\examples\abstractstubserver.h"</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Generating stub..</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -131,6 +154,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(OutDir)..\include;$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,8 +162,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;curldll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDirDir)..\..\src\examples\abstractstubserver.h" "$(OutDir)jsonrpcstubgen.exe"  "$(SolutionDirDir)..\..\src\examples\spec.json" --cpp-server=AbstractStubServer --cpp-server-file="$(SolutionDirDir)..\..\src\examples\abstractstubserver.h"</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Generating stub..</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -150,6 +180,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(OutDir)..\include;$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,8 +188,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;curldll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDirDir)..\..\src\examples\abstractstubserver.h" "$(OutDir)jsonrpcstubgen.exe"  "$(SolutionDirDir)..\..\src\examples\spec.json" --cpp-server=AbstractStubServer --cpp-server-file="$(SolutionDirDir)..\..\src\examples\abstractstubserver.h"</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Generating stub..</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

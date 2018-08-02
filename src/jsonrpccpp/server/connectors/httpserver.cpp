@@ -71,6 +71,7 @@ bool HttpServer::StartListening() {
             this->sslcert.c_str(), MHD_OPTION_THREAD_POOL_SIZE, this->threads,
             MHD_OPTION_END);
       } catch (JsonRpcException &ex) {
+        ex.what();
         return false;
       }
     } else {

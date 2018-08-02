@@ -3,43 +3,76 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clientlib", "clientlib.vcxproj", "{08447B51-974D-4EA3-81BD-4446CCE84283}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcclientlib", "clientlib.vcxproj", "{08447B51-974D-4EA3-81BD-4446CCE84283}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0D04ABE5-27A4-473D-B337-21207B5D7A2D} = {0D04ABE5-27A4-473D-B337-21207B5D7A2D}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serverlib", "serverlib.vcxproj", "{5F1EA0C4-A3B3-4200-B8D4-5E0B44BDFF30}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcserverlib", "serverlib.vcxproj", "{5F1EA0C4-A3B3-4200-B8D4-5E0B44BDFF30}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0D04ABE5-27A4-473D-B337-21207B5D7A2D} = {0D04ABE5-27A4-473D-B337-21207B5D7A2D}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "commonlib", "commonlib.vcxproj", "{0D04ABE5-27A4-473D-B337-21207B5D7A2D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpclib", "commonlib.vcxproj", "{0D04ABE5-27A4-473D-B337-21207B5D7A2D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stublib", "stublib.vcxproj", "{9514FD6C-D172-4A8C-82AE-C7D970FA10F7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcstublib", "stublib.vcxproj", "{9514FD6C-D172-4A8C-82AE-C7D970FA10F7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stubgen", "stubexe.vcxproj", "{EC98838B-DAC1-4DC7-94C2-46C0A15122AC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcstubgen", "stubexe.vcxproj", "{EC98838B-DAC1-4DC7-94C2-46C0A15122AC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpsocketclient", "tcpsocketclient.vcxproj", "{F05DD26A-5623-4680-A179-EB82E0B0D3FB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpctcpsocketclient", "tcpsocketclient.vcxproj", "{F05DD26A-5623-4680-A179-EB82E0B0D3FB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpsocketserver", "tcpsocketserver.vcxproj", "{1DD7D5B6-44ED-48DD-8588-51E1371AA7EE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpctcpsocketserver", "tcpsocketserver.vcxproj", "{1DD7D5B6-44ED-48DD-8588-51E1371AA7EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{68FCEC63-4E64-4DB4-907C-1DA69C537092}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{AA87FEF0-3326-4C9D-925A-DBCEB0C216BC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simpleclient", "simpleclient.vcxproj", "{0B6B9343-5B30-4CFC-9157-4CE307FBEA9C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcsimpleclient", "simpleclient.vcxproj", "{0B6B9343-5B30-4CFC-9157-4CE307FBEA9C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stubclient", "stubclient.vcxproj", "{2B4FAC41-5C71-4D2F-BD39-AC59F9DEA64D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcstubclient", "stubclient.vcxproj", "{2B4FAC41-5C71-4D2F-BD39-AC59F9DEA64D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC98838B-DAC1-4DC7-94C2-46C0A15122AC} = {EC98838B-DAC1-4DC7-94C2-46C0A15122AC}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unittest_suite", "unittest_suite.vcxproj", "{6391409A-F8A6-4BB2-9289-D13D513DDA88}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpc_unittest_suite", "unittest_suite.vcxproj", "{6391409A-F8A6-4BB2-9289-D13D513DDA88}"
+	ProjectSection(ProjectDependencies) = postProject
+		{08447B51-974D-4EA3-81BD-4446CCE84283} = {08447B51-974D-4EA3-81BD-4446CCE84283}
+		{9514FD6C-D172-4A8C-82AE-C7D970FA10F7} = {9514FD6C-D172-4A8C-82AE-C7D970FA10F7}
+		{5F1EA0C4-A3B3-4200-B8D4-5E0B44BDFF30} = {5F1EA0C4-A3B3-4200-B8D4-5E0B44BDFF30}
+		{0D04ABE5-27A4-473D-B337-21207B5D7A2D} = {0D04ABE5-27A4-473D-B337-21207B5D7A2D}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xbmcremote", "xbmcremote.vcxproj", "{5C12D92A-C1F9-437E-81F1-2B73FD56AD30}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC98838B-DAC1-4DC7-94C2-46C0A15122AC} = {EC98838B-DAC1-4DC7-94C2-46C0A15122AC}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clientdll", "clientdll.vcxproj", "{1C99DE06-5660-4438-B962-10A8F90C9C84}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcclientdll", "clientdll.vcxproj", "{1C99DE06-5660-4438-B962-10A8F90C9C84}"
+	ProjectSection(ProjectDependencies) = postProject
+		{08447B51-974D-4EA3-81BD-4446CCE84283} = {08447B51-974D-4EA3-81BD-4446CCE84283}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serverdll", "serverdll.vcxproj", "{C14D4524-0614-4214-BB57-B1D687C9560E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcserverdll", "serverdll.vcxproj", "{C14D4524-0614-4214-BB57-B1D687C9560E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F1EA0C4-A3B3-4200-B8D4-5E0B44BDFF30} = {5F1EA0C4-A3B3-4200-B8D4-5E0B44BDFF30}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "commondll", "commondll.vcxproj", "{CD522BD3-0C9E-4E74-9FB3-B4CA73AD19C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcdll", "commondll.vcxproj", "{CD522BD3-0C9E-4E74-9FB3-B4CA73AD19C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0D04ABE5-27A4-473D-B337-21207B5D7A2D} = {0D04ABE5-27A4-473D-B337-21207B5D7A2D}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stubdll", "stubdll.vcxproj", "{2C4A9C39-FA6A-41B5-A68F-7C755E42E80F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcstubdll", "stubdll.vcxproj", "{2C4A9C39-FA6A-41B5-A68F-7C755E42E80F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9514FD6C-D172-4A8C-82AE-C7D970FA10F7} = {9514FD6C-D172-4A8C-82AE-C7D970FA10F7}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simpleserver", "simpleserver.vcxproj", "{8E8DE7EC-2353-4CD7-9926-3A45DD65D28B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcsimpleserver", "simpleserver.vcxproj", "{8E8DE7EC-2353-4CD7-9926-3A45DD65D28B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stubserver", "stubserver.vcxproj", "{976E92C8-3147-434D-8088-EDF2875291DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsonrpcstubserver", "stubserver.vcxproj", "{976E92C8-3147-434D-8088-EDF2875291DA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC98838B-DAC1-4DC7-94C2-46C0A15122AC} = {EC98838B-DAC1-4DC7-94C2-46C0A15122AC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

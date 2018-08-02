@@ -7,21 +7,22 @@
  * @license See attached LICENSE.txt
  ************************************************************************/
 
-#include "gen/xbmcremote.h"
+#include "xbmcremote.h"
 #include <jsonrpccpp/client/connectors/httpclient.h>
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
-#ifndef WIN32
-#include <termios.h>
-#else
-#include <conio.h>
-#endif
-#include <time.h>
-#include <unistd.h>
 
+#ifdef WIN32
+#include <conio.h>
+#define usleep Sleep
+#else
+#include <termios.h>
+#include <unistd.h>
+#endif
+
+#include <time.h>
 #include <iostream>
 
 using namespace jsonrpc;

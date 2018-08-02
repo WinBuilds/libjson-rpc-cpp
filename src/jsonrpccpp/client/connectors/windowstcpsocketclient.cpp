@@ -36,7 +36,7 @@ void WindowsTcpSocketClient::SendRPCMessage(
   bool fullyWritten = false;
   string toSend = message;
   do {
-    int byteWritten = send(socket_fd, toSend.c_str(), toSend.size(), 0);
+    int byteWritten = send(socket_fd, toSend.c_str(), (int)toSend.size(), 0);
     if (byteWritten == -1) {
       string message = "send() failed";
       int err = WSAGetLastError();
@@ -66,7 +66,7 @@ void WindowsTcpSocketClient::SendRPCMessage(
       closesocket(socket_fd);
       throw JsonRpcException(Errors::ERROR_CLIENT_CONNECTOR, message);
     } else if (static_cast<unsigned int>(byteWritten) < toSend.size()) {
-      int len = toSend.size() - byteWritten;
+      size_t len = toSend.size() - byteWritten;
       toSend = toSend.substr(byteWritten + sizeof(char), len);
     } else
       fullyWritten = true;

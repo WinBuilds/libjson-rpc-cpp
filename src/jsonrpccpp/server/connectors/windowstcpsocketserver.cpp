@@ -199,7 +199,7 @@ bool WindowsTcpSocketServer::WriteToSocket(const SOCKET &fd,
       errorOccured = true;
       CleanClose(fd);
     } else if (byteWritten < toSend.size()) {
-      int len = toSend.size() - byteWritten;
+      size_t len = toSend.size() - byteWritten;
       toSend = toSend.substr(byteWritten + sizeof(char), len);
     } else
       fullyWritten = true;
