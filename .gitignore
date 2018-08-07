@@ -43,8 +43,9 @@ CMakeCache.txt
 *.obj
 *.log
 *.tlog
-*.VS.db
-*.VS.opendb
+*.aps
+*.VC.db
+*.VC.opendb
 .vs/
 ipch/
 
