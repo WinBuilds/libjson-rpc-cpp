@@ -10,15 +10,15 @@
 #ifndef JSONRPC_CPP_SERVERCONNECTOR_H_
 #define JSONRPC_CPP_SERVERCONNECTOR_H_
 
-#include "iclientconnectionhandler.h"
 #include <string>
+#include "iclientconnectionhandler.h"
 
 namespace jsonrpc {
 
 class AbstractServerConnector {
 public:
-  AbstractServerConnector();
-  virtual ~AbstractServerConnector();
+   AbstractServerConnector();
+   virtual ~AbstractServerConnector();
 
   /**
    * This method should signal the Connector to start waiting for requests, in
@@ -26,6 +26,7 @@ public:
    * If something went wrong, this method should return false, otherwise true.
    */
   virtual bool StartListening() = 0;
+
   /**
    * This method should signal the Connector to stop waiting for requests, in
    * any way that is appropriate for the derived connector class.
