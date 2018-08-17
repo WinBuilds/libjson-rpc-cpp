@@ -13,6 +13,10 @@
 #include <string>
 #include <sys/types.h>
 
+#ifdef _WIN32
+typedef int pid_t;
+#endif
+
 namespace jsonrpc {
 
     /**

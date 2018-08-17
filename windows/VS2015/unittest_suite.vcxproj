@@ -24,7 +24,6 @@
     <ClInclude Include="..\..\src\test\mockclientconnector.h" />
     <ClInclude Include="..\..\src\test\mockserverconnector.h" />
     <ClInclude Include="..\..\src\test\testhttpserver.h" />
-    <ClInclude Include="..\..\src\test\testredisserver.h" />
     <ClInclude Include="..\..\src\test\testserver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -33,18 +32,25 @@
     <ClCompile Include="..\..\src\test\mockclientconnector.cpp" />
     <ClCompile Include="..\..\src\test\mockserverconnector.cpp" />
     <ClCompile Include="..\..\src\test\testhttpserver.cpp" />
-    <ClCompile Include="..\..\src\test\testredisserver.cpp" />
     <ClCompile Include="..\..\src\test\testserver.cpp" />
     <ClCompile Include="..\..\src\test\test_client.cpp" />
     <ClCompile Include="..\..\src\test\test_common.cpp" />
     <ClCompile Include="..\..\src\test\test_connector_filedescriptor.cpp" />
     <ClCompile Include="..\..\src\test\test_connector_http.cpp" />
-    <ClCompile Include="..\..\src\test\test_connector_redis.cpp" />
     <ClCompile Include="..\..\src\test\test_connector_tcpsocket.cpp" />
-    <ClCompile Include="..\..\src\test\test_connector_unixdomainsocket.cpp" />
     <ClCompile Include="..\..\src\test\test_integration.cpp" />
-    <ClCompile Include="..\..\src\test\test_server.cpp" />
     <ClCompile Include="..\..\src\test\test_stubgenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="clientlib.vcxproj">
+      <Project>{08447b51-974d-4ea3-81bd-4446cce84283}</Project>
+    </ProjectReference>
+    <ProjectReference Include="commonlib.vcxproj">
+      <Project>{0d04abe5-27a4-473d-b337-21207b5d7a2d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="serverlib.vcxproj">
+      <Project>{5f1ea0c4-a3b3-4200-b8d4-5e0b44bdff30}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6391409A-F8A6-4BB2-9289-D13D513DDA88}</ProjectGuid>
@@ -58,27 +64,27 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -126,10 +132,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(OutDir)..\include;$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -140,10 +149,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(OutDir)..\include;$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -162,6 +174,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -180,6 +194,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(OutDir)..\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;jsoncpplib.lib;microhttpdlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

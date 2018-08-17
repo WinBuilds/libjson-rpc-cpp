@@ -12,7 +12,6 @@
 #include <iostream>
 #include <signal.h>
 #include <stdio.h>
-#include <unistd.h>
 
 using namespace std;
 using namespace jsonrpc;
